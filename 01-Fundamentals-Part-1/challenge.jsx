@@ -35,3 +35,16 @@ if (BMIMark > BMIJohn) {
 } else{
     console.log(`John's BMI (${BMIJohn}) is higher than Mark's (${BMIMark}!)`)
 }
+
+// CHALLENGE #3
+/* Write your code below. Good luck! 🙂 */
+const scoreDolphins =  (96 + 108 + 89) / 2
+const scoreKoalas =  (88 + 91 + 110) / 2
+
+if (scoreDolphins > scoreKoalas){
+    console.log("Dolphins win the trophy")
+}else if(scoreKoalas > scoreDolphins){
+    console.log("Koalas win the trophy")
+}else{
+    console.log("Both win the trophy")
+}
