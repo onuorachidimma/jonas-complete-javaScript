@@ -33,6 +33,8 @@ const language = "English"
 const country = "Nigeria";
 const continent = "Africa";
 let population = 120000000;
+const isIsland = false
+
 
 
 
@@ -87,4 +89,12 @@ if (numNeighbours === 1) {
     console.log("More than 1 border")
 }else{
     console.log("No borders")
+}
+
+
+// ######### LOGICAL OPERATORS ##############
+if ( language === "English" && population < 50000000 && isIsland){
+    console.log(`You should live in ${country} :)`)
+}else{
+    console.log(` ${country} does not meet your criteria :(`)
 }
