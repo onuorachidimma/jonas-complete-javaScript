@@ -34,3 +34,14 @@ const chinaPopulationExp = percentageOfWorld2("China", 1441)
 console.log(chinaPopulationExp)
 const germanyPopulationExp = percentageOfWorld2("Germany", 100000)
 console.log(germanyPopulationExp)
+
+
+// ########## ARROW FUNCTIONS  ###########
+const percentageOfWorld3 = (country, population) => `${country} has ${population} people, so it's about ${(population / 7900) * 100}% of the world population`
+
+const nigeriaPopulationArr = percentageOfWorld2("Nigeria", 120000)
+console.log(nigeriaPopulationArr)
+const chinaPopulationArr = percentageOfWorld2("China", 1441)
+console.log(chinaPopulationArr)
+const germanyPopulationArr = percentageOfWorld2("Germany", 100000)
+console.log(germanyPopulationArr)
