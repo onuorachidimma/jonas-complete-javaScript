@@ -122,3 +122,12 @@ switch (switchLanguage){
         default:
             console.log('Great language too :D')
 }
+
+
+// ######### TERNARY OPERATORS ##############
+population = 120000000
+// population > 33000000 ? console.log(`${country}'s population is above average`) : console.log(`${country}'s population is below average`)
+
+console.log(
+    `${country}'s population is ${population > 33 ? 'above' : 'below'} average`
+  );
