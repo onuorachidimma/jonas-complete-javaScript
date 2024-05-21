@@ -13,14 +13,14 @@ console.log(nigera, angola, germany)
 
 // ########## FUNCTION DECLARATION VS EXPRESSIONS  ###########
 // Function declaration
-function percentageOfWorld1(country, population){
-    return `${country} has ${population} people, so it's about ${(population / 7900) * 100}% of the world population`
+function percentageOfWorld1(population){
+    return population / 7900 * 100
 }
-const nigeriaPopulation = percentageOfWorld1("Nigeria", 120000)
+const nigeriaPopulation = percentageOfWorld1(120000)
 console.log(nigeriaPopulation)
-const chinaPopulation = percentageOfWorld1("China", 1441)
+const chinaPopulation = percentageOfWorld1(1441)
 console.log(chinaPopulation)
-const germanyPopulation = percentageOfWorld1("Germany", 100000)
+const germanyPopulation = percentageOfWorld1(100000)
 console.log(germanyPopulation)
 
 // Function expression
@@ -45,3 +45,16 @@ const chinaPopulationArr = percentageOfWorld2("China", 1441)
 console.log(chinaPopulationArr)
 const germanyPopulationArr = percentageOfWorld2("Germany", 100000)
 console.log(germanyPopulationArr)
+
+
+// ########## FUNCTIONS CALLING OTHER FUNCTIONS  ###########
+function describePopulation (country, population){
+
+    const populationPercentage = percentageOfWorld1(population);
+    const countryPopulationStats = `${country} has ${population} people, which is about ${populationPercentage} of the world`
+    console.log(countryPopulationStats)
+}
+
+describePopulation("Nigeria", 1000000)
+describePopulation("China", 1200000)
+describePopulation("Germany", 90000)
