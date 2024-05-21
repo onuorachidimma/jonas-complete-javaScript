@@ -58,3 +58,14 @@ function describePopulation (country, population){
 describePopulation("Nigeria", 1000000)
 describePopulation("China", 1200000)
 describePopulation("Germany", 90000)
+
+
+// function greetMe(name){
+//     return `Goodday, ${name}`
+// }
+
+// function greetNow(myname){
+//     const greetname = greetMe(myname);
+//     console.log(greetname)
+// }
+// const greetings = greetNow(prompt("WHat is your name?"))
