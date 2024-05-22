@@ -69,3 +69,12 @@ describePopulation("Germany", 90000)
 //     console.log(greetname)
 // }
 // const greetings = greetNow(prompt("WHat is your name?"))
+
+
+// ########## INTRO TO ARRAYS  ###########
+
+const populationArr = [120, 150, 22, 11]
+
+console.log(populationArr.length === 4)
+const percentages = [percentageOfWorld1(populationArr[0]), percentageOfWorld1(populationArr[1]), percentageOfWorld1(populationArr[2])]
+console.log(percentages)
