@@ -78,3 +78,20 @@ const populationArr = [120, 150, 22, 11]
 console.log(populationArr.length === 4)
 const percentages = [percentageOfWorld1(populationArr[0]), percentageOfWorld1(populationArr[1]), percentageOfWorld1(populationArr[2])]
 console.log(percentages)
+
+// ########## BASIC ARRAY OPERATIONS(OBJECTS)  ###########
+const neighbours = ["Niger", "Cameroun", "Chad" ]
+console.log(neighbours)
+
+neighbours.push("Utopia")
+console.log(neighbours)
+
+neighbours.pop("Utopia")
+console.log(neighbours)
+
+if (!neighbours.includes("Germany")){
+    console.log('Probably not a central european country :D')
+}
+
+neighbours[neighbours.indexOf("Chad")] = "Ghana"
+console.log(neighbours)
