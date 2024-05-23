@@ -107,4 +107,13 @@ const myCountry = {
     neighbours: ["Niger", "Cameroun", "Chad" ]
 }
 
+
+// ########## DOT VS BRACKET NOTATION  ###########
+console.log(`'${myCountry.country} has ${myCountry.population} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}'.`)
+
 console.log(myCountry)
+myCountry.population += 2000000
+console.log(myCountry.population)
+
+myCountry['population'] -= 2000000
+console.log(myCountry.population)
