@@ -154,3 +154,12 @@ for(let popPercent = 0; popPercent < populationArray.length; popPercent++){
 }
 console.log(percentages2)
 
+
+
+// ##########  LOOPING BACKWARDS AND LOOPS IN LOOPS ###########
+const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']]
+console.log("_______I AM LOOP IN LOOPS________")
+for (let loopCountry1 = 0; loopCountry1 < listOfNeighbours.length; loopCountry1++)
+    for (let loopInloop = 0; loopInloop < listOfNeighbours[loopCountry1].length; loopInloop++)
+        console.log(`Neighbour: ${listOfNeighbours[loopCountry1][loopInloop]}`)
+   
