@@ -95,3 +95,16 @@ if (!neighbours.includes("Germany")){
 
 neighbours[neighbours.indexOf("Chad")] = "Ghana"
 console.log(neighbours)
+
+// ########## INTRO TO OBJECTS  ###########
+
+const myCountry = {
+    country: "Nigeria",
+    capital: "Abuja",
+    language: "English",
+    population: 120000000,
+    // neighbours: neighbours
+    neighbours: ["Niger", "Cameroun", "Chad" ]
+}
+
+console.log(myCountry)
