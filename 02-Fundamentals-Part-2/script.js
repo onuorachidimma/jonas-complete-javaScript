@@ -98,22 +98,42 @@ console.log(neighbours)
 
 // ########## INTRO TO OBJECTS  ###########
 
+// const myCountry = {
+//     country: "Nigeria",
+//     capital: "Abuja",
+//     language: "English",
+//     population: 120000000,
+//     neighbours: ["Niger", "Cameroun", "Chad" ]
+// }
+
+
+// ########## DOT VS BRACKET NOTATION  ###########
+// console.log(`'${myCountry.country} has ${myCountry.population} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}'.`)
+
+// console.log(myCountry)
+// myCountry.population += 2000000
+// console.log(myCountry.population)
+
+// myCountry['population'] -= 2000000
+// console.log(myCountry.population)
+
+
+// ########## OBJECTS METHODS  ###########
+
 const myCountry = {
     country: "Nigeria",
     capital: "Abuja",
     language: "English",
     population: 120000000,
     // neighbours: neighbours
-    neighbours: ["Niger", "Cameroun", "Chad" ]
+    neighbours: ["Niger", "Cameroun", "Chad" ],
+    describe: function(){
+        console.log(`${this.country} has ${this.population} ${this.language}-speaking people, ${this.neighbours.length} neighbouring countries and a capital called ${this.capital}.`)
+    },
+    checkIsland: function(){
+        this.isIsland = this.neighbours.length === 0 ? true : false;
+    }
 }
-
-
-// ########## DOT VS BRACKET NOTATION  ###########
-console.log(`'${myCountry.country} has ${myCountry.population} ${myCountry.language}-speaking people, ${myCountry.neighbours.length} neighbouring countries and a capital called ${myCountry.capital}'.`)
-
-console.log(myCountry)
-myCountry.population += 2000000
-console.log(myCountry.population)
-
-myCountry['population'] -= 2000000
-console.log(myCountry.population)
+myCountry.describe()
+myCountry.checkIsland()
+console.log(myCountry);
