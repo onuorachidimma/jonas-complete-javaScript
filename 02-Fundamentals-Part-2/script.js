@@ -144,3 +144,13 @@ console.log(myCountry);
 for (let voter = 1; voter <= 50; voter++){
     console.log(`Voter number ${voter} is currently voting`)
 }
+
+// ##########   LOOPING ARRAYS, BREAKING AND CONTINUING  ###########
+console.log("____I AM THE NEW POPULATION PERCENTAGE___________")
+const populationArray = [120, 150, 22, 11]
+const percentages2 = []
+for(let popPercent = 0; popPercent < populationArray.length; popPercent++){
+    percentages2.push(percentageOfWorld1(populationArray[popPercent]))
+}
+console.log(percentages2)
+
