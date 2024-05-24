@@ -61,3 +61,17 @@ This time, let's use objects to implement the calculations! Remember: BMI = mass
 ### TEST DATA:
 - Mark weighs 78 kg and is 1.69 m tall.
 - John weighs 92 kg and is 1.95 m tall.
+# CHALLENGE #4
+
+Let's improve Steven's tip calculator even more, this time using loops!
+
+## Your tasks:
+
+1. Create an array called `bills` containing all 10 test bill values.
+2. Create empty arrays for the tips and the totals (`tips` and `totals`).
+3. Use the `calcTip` function we wrote before (included in the starter code) to calculate tips and total values (bill + tip) for every bill value in the `bills` array. Use a `for` loop to perform the 10 calculations!
+
+### TEST DATA:
+- 22, 295, 176, 440, 37, 105, 10, 1100, 86, and 52.
+
+
