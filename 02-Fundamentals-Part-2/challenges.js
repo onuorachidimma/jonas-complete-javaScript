@@ -1,6 +1,6 @@
 /* Write your code below. Good luck! 🙂 */
 
-const calcAverage = (num1, num2, num3) =>{
+const calcAverage1 = (num1, num2, num3) =>{
     return (num1 + num2 + num3)/ 3
 }
 
@@ -91,3 +91,12 @@ const calcTip = function (bill) {
   }
   console.log(tips)
   console.log(totals)
+
+  const calcAverage = (arr) => {
+    let sum = 0;
+    for(let i = 0; i < arr.length; i++){
+        sum += arr[i]
+    }
+    return sum / arr.length
+}
+console.log(calcAverage(totals))
