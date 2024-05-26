@@ -154,7 +154,17 @@ for(let popPercent = 0; popPercent < populationArray.length; popPercent++){
 }
 console.log(percentages2)
 
-
+// ##########   WHILE LOOP  ###########
+const populationArray1 = [120, 150, 22, 11]
+const percentages3 = []
+let popPercent = 0
+console.log("_______I AM WHILE LOOP________")
+while (popPercent < populationArray1.length){
+    percentages3.push(percentageOfWorld1(populationArray1[popPercent]))
+    popPercent++
+    
+}
+console.log(percentages3)
 
 // ##########  LOOPING BACKWARDS AND LOOPS IN LOOPS ###########
 const listOfNeighbours = [['Canada', 'Mexico'], ['Spain'], ['Norway', 'Sweden', 'Russia']]
@@ -163,3 +173,6 @@ for (let loopCountry1 = 0; loopCountry1 < listOfNeighbours.length; loopCountry1+
     for (let loopInloop = 0; loopInloop < listOfNeighbours[loopCountry1].length; loopInloop++)
         console.log(`Neighbour: ${listOfNeighbours[loopCountry1][loopInloop]}`)
    
+   
+   
+        
