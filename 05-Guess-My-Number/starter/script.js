@@ -14,8 +14,12 @@ const checkMatch = () => {
     } else if (Guess < GuessNum) {
         Message.textContent = "Too low!";
         document.querySelector('.score').textContent -= 1
+
+        // when guess is correct
     } else if (Guess === GuessNum) {
         Message.textContent = "Correct!";
+        document.querySelector('body').style.backgroundColor = 'green'   //change color of background if correct
+        document.querySelector('.number').style.width = '30rem'   //change color of width of number if correct
         document.querySelector('.number').textContent = GuessNum
         
         let highScore = document.querySelector('.highscore').textContent = GuessNum
@@ -27,6 +31,8 @@ const checkMatch = () => {
 document.querySelector('.check').addEventListener('click', checkMatch);
 
 const Again = () => {
+    document.querySelector('body').style.backgroundColor = '#222' //revert to old color
+    document.querySelector('.number').style.width = '15rem' //revert to old width of number
     let GuessNum = Math.floor(Math.random() * 20) + 1;
 
     document.querySelector('.guess').value = ' ';
