@@ -7,9 +7,14 @@ console.log(typeof highScore)
 let score = 20
 
 const checkMatch = () => {
-    // WHEN GUESS IS CORRECT
+    
     const Guess = Number(document.querySelector('.guess').value);
-    if (Guess === GuessNum) {
+    // WHEN GUESS IS NOT A NUMBER
+    if(!Guess){
+        document.querySelector('.message').textContent = 'Please input a number!';
+    }
+    // WHEN GUESS IS CORRECT
+    else if (Guess === GuessNum) {
         Message.textContent = "Correct!";
         document.querySelector('body').style.backgroundColor = 'green'   //change color of background if correct
         document.querySelector('.number').style.width = '30rem'   //change color of width of number if correct
