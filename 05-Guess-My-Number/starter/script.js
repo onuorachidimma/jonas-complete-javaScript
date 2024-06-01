@@ -4,7 +4,7 @@ const Message = document.querySelector('.message');
 let GuessNum = Math.floor(Math.random() * 20) + 1;
 let highScore = document.querySelector('.highscore').textContent
 console.log(typeof highScore)
-// highScore = 0
+let score = 20
 
 const checkMatch = () => {
     const Guess = Number(document.querySelector('.guess').value);
@@ -13,15 +13,9 @@ const checkMatch = () => {
     // console.log(typeof GuessNum)
 
     // when guess is wrong
-    if (Guess > GuessNum) {
-        Message.textContent = "Too high!";
-        document.querySelector('.score').textContent -= 1
-    } else if (Guess < GuessNum) {
-        Message.textContent = "Too low!";
-        document.querySelector('.score').textContent -= 1
 
-        // when guess is correct
-    } else if (Guess === GuessNum) {
+
+    if (Guess === GuessNum) {
         Message.textContent = "Correct!";
         document.querySelector('body').style.backgroundColor = 'green'   //change color of background if correct
 
@@ -39,7 +33,37 @@ const checkMatch = () => {
         
         
         
-    }
+    }else if (Guess > GuessNum) {
+        if(document.querySelector('.score').textContent > 1){
+            Message.textContent = "Too High!";
+            document.querySelector('.score').textContent -= 1
+        }else{
+            document.querySelector('.score').textContent = "0"
+            Message.textContent = "Game Over!"
+        }
+
+        // Message.textContent = "Too high!";
+        // document.querySelector('.score').textContent -= 1
+        
+        // if (document.querySelector('.score').textContent == 0){
+        //     Message.textContent = "Game Over!"
+        // }
+    } else if (Guess < GuessNum) {
+        if(document.querySelector('.score').textContent > 1){
+            Message.textContent = "Too low!";
+            document.querySelector('.score').textContent -= 1
+        }else{
+            document.querySelector('.score').textContent = "0"
+            Message.textContent = "Game Over!"
+        }
+        
+
+        // if (document.querySelector('.score').textContent == 0){
+            
+        // }
+
+        // when guess is correct
+    } 
 };
 
 document.querySelector('.check').addEventListener('click', checkMatch);
@@ -53,6 +77,8 @@ const Again = () => {
     // GuessNum.textContent = "?"
     document.querySelector('.number').textContent = '?'
     document.querySelector('.message').textContent = 'Start guessing...';
+
+    document.querySelector('.score').textContent = "20"
 
 };
 
