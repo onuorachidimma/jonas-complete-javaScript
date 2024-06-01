@@ -24,8 +24,8 @@ const checkMatch = () => {
         document.querySelector('.number').textContent = GuessNum
         
         // Implement high Score
-        if (GuessNum > document.querySelector('.highscore').textContent){
-            document.querySelector('.highscore').textContent = GuessNum
+        if (document.querySelector('.score').textContent > document.querySelector('.highscore').textContent){
+            document.querySelector('.highscore').textContent = document.querySelector('.score').textContent
         }else{
             return document.querySelector('.highscore').textContent
         }
