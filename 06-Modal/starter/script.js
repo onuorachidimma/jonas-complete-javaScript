@@ -31,14 +31,22 @@ function openModal() {
   console.log('I just got clicked');
 }
 
-for (let i = 0; i < showModal.length; i++) {
-  showModal[i].addEventListener('click', openModal);
-}
-
 function killModal() {
   modal.classList.add('hidden');
   overlay.classList.add('hidden');
   console.log('I just got clicked');
 }
 
+for (let i = 0; i < showModal.length; i++) {
+  showModal[i].addEventListener('click', openModal);
+}
+
 closeModal.addEventListener('click', killModal);
+
+
+// CLOSE MODAL WHEN THE Esc BUTTON IS PRESSED
+document.addEventListener('keydown', function (e){
+  if (e.key === "Escape"){
+  killModal()
+  }
+})
