@@ -46,7 +46,10 @@ closeModal.addEventListener('click', killModal);
 
 // CLOSE MODAL WHEN THE Esc BUTTON IS PRESSED
 document.addEventListener('keydown', function (e){
-  if (e.key === "Escape"){
+  if (!modal.classList.contains('hidden') && e.key === "Escape"){
   killModal()
   }
 })
+
+// CLOSE MODAL WHEN ANY PART OF THE SCREEN IS CLICKED
+overlay.addEventListener('click', killModal);
