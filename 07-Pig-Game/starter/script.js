@@ -80,11 +80,15 @@ const rollDice = document.querySelector('.btn--roll');
 const holdScore = document.querySelector('.btn--hold');
 const holdScorePlayer1 = document.getElementById('current--0');
 const holdScorePlayer2 = document.getElementById('current--1');
+const totalScorePlayer1 = document.getElementById('score--0');
 const players = document.querySelectorAll('.player');
+const activePlayer = document.querySelector('.player--active');
+const player1 = document.querySelector('.player--1');
 
 // Initialize current scores for both players
 let currentScorePlayer1 = 0;
 let currentScorePlayer2 = 0;
+let player1Total = 0
 
 // Function to reset the game
 function resetGame() {
@@ -95,6 +99,7 @@ function resetGame() {
     rollingDice.style.display = 'none';
     currentScorePlayer1 = 0;
     currentScorePlayer2 = 0;
+    activePlayer.classList.add('player--active')
 }
 newGame.addEventListener('click', resetGame);
 
@@ -120,7 +125,7 @@ rollDice.addEventListener('click', function () {
     let randomDice = diceArr.indexOf(newArr) + 1;
 
     // Dynamically get the current active player
-    const activePlayer = document.querySelector('.player--active');
+    // const activePlayer = document.querySelector('.player--active');
 
     // Update the current score of the active player
     if (activePlayer.classList.contains('player--0')) {
@@ -131,3 +136,14 @@ rollDice.addEventListener('click', function () {
         holdScorePlayer2.textContent = currentScorePlayer2;
     }
 });
+
+if (activePlayer.classList.contains('player--0')){
+    holdScore.addEventListener('click', function (){
+        player1Total += currentScorePlayer1
+        console.log(currentScorePlayer1, "i amtotallllll")
+        totalScorePlayer1.textContent = player1Total
+        activePlayer.classList.remove('player--active')
+        player1.classList.add('player--active')
+    })
+}
+
