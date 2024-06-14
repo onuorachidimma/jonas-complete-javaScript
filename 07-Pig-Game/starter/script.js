@@ -1,149 +1,68 @@
-// 'use strict';
-//  const newGame = document.querySelector('.btn--new')
-//  const score = document.querySelectorAll('.score')
-//  const currentScore = document.querySelectorAll('.current-score')
-//  const rollingDice = document.querySelector('.dice')
-//  const rollDice = document.querySelector('.btn--roll')
-//  const activePlayer = document.querySelector('.player--active')
-//  const holdScore = document.querySelector('.btn--hold')
-//  const holdScorePlayer1 = document.getElementById('current--0')
-//  const player = document.querySelectorAll('.player')
-
-// let currentScorePlayer1 = 0;
-// let currentScorePlayer2 = 0;
-
-//  function scoreToHold (){
-//     if(activePlayer){
-//         holdScore.addEventListener
-//     }
-//  }
-// // FUNCTION TO RESET GAME
-//  function resetGame(){
-//     for (let i = 0; i < score.length && i < currentScore.length; i++){
-//         score[i].textContent = 0
-//         currentScore[i].textContent = 0
-//     }
-//     rollingDice.style.display = 'none'
-
-//         currentScorePlayer1 = 0;
-//         currentScorePlayer2 = 0;
-
-//     // console.log('I am clicked')
-//  }newGame.addEventListener('click', resetGame)
-
-//  //  newGame.addEventListener('click', function resetGame(){
-// //     for (let i = 0; i < score.length && i < currentScore.length; i++){
-// //         score[i].textContent = '0'
-// //         currentScore[i].textContent = '0'
-// //     }
-// //     rollingDice.style.display = 'none'
-// //  })
-
- 
-// // ROLL DICE
-// const diceArr = ['./dice-1.png', './dice-2.png', './dice-3.png', './dice-4.png', './dice-5.png', './dice-6.png']
-
-// rollDice.addEventListener('click', function(){
-//     //SHOW RANDOM DICE
-//     function randomArray(arr){
-//         const randomDice = Math.floor(Math.random() * arr.length)
-//         console.log(randomDice + 1)
-//         return arr[randomDice]
-//     }
-//     const newArr = randomArray(diceArr)
-//     console.log(newArr)
-
-    
-//     rollingDice.style.display = 'block'     //Display rolled dice
-//     rollingDice.src = newArr
-//     let randomDice = diceArr.indexOf(newArr) + 1; // Get the dice number from the array
-//     let currentScorePlayer1 = 0
-//     if (activePlayer.classList.contains('player--0')) {
-//                 currentScorePlayer1 += randomDice;
-//                 holdScorePlayer1.textContent = currentScorePlayer1;
-//             } else {
-//                 currentScorePlayer2 += randomDice;
-//                 holdScorePlayer2.textContent = currentScorePlayer2;
-//             }
-  
-    
-    
-// })
-    
-
 'use strict';
 const newGame = document.querySelector('.btn--new');
-const score = document.querySelectorAll('.score');
-const currentScore = document.querySelectorAll('.current-score');
-const rollingDice = document.querySelector('.dice');
+let scores = document.querySelector('.score');
+const namePlayer = document.querySelectorAll('.name');
+// const currentScore = document.querySelectorAll('.current-score');
+const rolledDice = document.querySelector('.dice');
 const rollDice = document.querySelector('.btn--roll');
 const holdScore = document.querySelector('.btn--hold');
-const holdScorePlayer1 = document.getElementById('current--0');
-const holdScorePlayer2 = document.getElementById('current--1');
-const totalScorePlayer1 = document.getElementById('score--0');
+let currentScorePlayer0 = document.getElementById('current--0');
+let currentScorePlayer1 = document.getElementById('current--1');
+const scorePlayer0 = document.getElementById('score--0');
+const scorePlayer1 = document.getElementById('score--1');
 const players = document.querySelectorAll('.player');
-const activePlayer = document.querySelector('.player--active');
+const playing = document.querySelector('.player--active');
 const player1 = document.querySelector('.player--1');
+const player0 = document.querySelector('.player--0');
 
 // Initialize current scores for both players
-let currentScorePlayer1 = 0;
-let currentScorePlayer2 = 0;
-let player1Total = 0
+scorePlayer0.textContent = 0;
+scorePlayer1.textContent = 0;
+let score = [0, 0]
+let currentScore = 0;
+let activePlayer = 0;
 
-// Function to reset the game
-function resetGame() {
-    for (let i = 0; i < score.length && i < currentScore.length; i++) {
-        score[i].textContent = 0;
-        currentScore[i].textContent = 0;
-    }
-    rollingDice.style.display = 'none';
-    currentScorePlayer1 = 0;
-    currentScorePlayer2 = 0;
-    activePlayer.classList.add('player--active')
+function switchPlayer(){
+  // Switch player
+  document.getElementById(`current--${activePlayer}`).textContent =
+  0;
+  activePlayer = activePlayer === 0 ? 1 : 0
+  document.getElementById(`current--${activePlayer}`).textContent =
+    0;
+  currentScore = 0
+  player0.classList.toggle('player--active')
+  player1.classList.toggle('player--active')
 }
-newGame.addEventListener('click', resetGame);
 
-// Roll Dice
-const diceArr = ['./dice-1.png', './dice-2.png', './dice-3.png', './dice-4.png', './dice-5.png', './dice-6.png'];
+// const diceArr = ['./dice-1.png', './dice-2.png', './dice-3.png', './dice-4.png', './dice-5.png', './dice-6.png'];
 
+// function switchPlayer() {}
+// Roll dice functionalty
 rollDice.addEventListener('click', function () {
-    // Function to get a random dice image from the array
-    function randomArray(arr) {
-        const randomDiceIndex = Math.floor(Math.random() * arr.length);
-        console.log(randomDiceIndex + 1);
-        return arr[randomDiceIndex];
-    }
+  // Randomly generate dice
+  let randomDice = Math.floor(Math.random() * 6) + 1;
+  console.log(randomDice);
+  // Display Dice
+  rolledDice.classList.remove('hidden');
+  rolledDice.src = `dice-${randomDice}.png`;
 
-    const newArr = randomArray(diceArr);
-    console.log(newArr);
-
-    // Display rolled dice
-    rollingDice.style.display = 'block';
-    rollingDice.src = newArr;
-
-    // Get the dice number from the array
-    let randomDice = diceArr.indexOf(newArr) + 1;
-
-    // Dynamically get the current active player
-    // const activePlayer = document.querySelector('.player--active');
-
-    // Update the current score of the active player
-    if (activePlayer.classList.contains('player--0')) {
-        currentScorePlayer1 += randomDice;
-        holdScorePlayer1.textContent = currentScorePlayer1;
-    } else {
-        currentScorePlayer2 += randomDice;
-        holdScorePlayer2.textContent = currentScorePlayer2;
-    }
+  if (randomDice !== 1) {
+    currentScore += randomDice;
+    document.getElementById(`current--${activePlayer}`).textContent =
+      currentScore;
+  } else {
+    switchPlayer()
+ 
+  }
 });
 
-if (activePlayer.classList.contains('player--0')){
-    holdScore.addEventListener('click', function (){
-        player1Total += currentScorePlayer1
-        console.log(currentScorePlayer1, "i amtotallllll")
-        totalScorePlayer1.textContent = player1Total
-        activePlayer.classList.remove('player--active')
-        player1.classList.add('player--active')
-    })
-}
-
+holdScore.addEventListener('click', function(){
+    score[activePlayer] += currentScore
+    document.getElementById(`score--${activePlayer}`).textContent =
+      score[activePlayer];
+    document.getElementById(`current--${activePlayer}`).textContent = 0
+    switchPlayer()
+    if (score[activePlayer] >= 20){
+        document.getElementById(`player--${activePlayer}`).classList.add('player--winner')
+    }
+})
