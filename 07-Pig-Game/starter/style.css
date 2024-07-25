@@ -169,3 +169,7 @@ main {
   font-weight: 700;
   color: #c7365f;
 }
+.result{
+  color: white;
+  font-size: 3rem;
+}
