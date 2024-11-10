@@ -64,7 +64,6 @@ const game = {
   },
 };
 
-
 // const properties = Object.values(game.odds)
 // console.log(properties)
 // let sum = 0
@@ -138,15 +137,19 @@ for (const [x, y] of Object.entries(game.odds)) {
 // }
 // console.log(scorers)
 
-
-
 // ################  SET ##############
-const learnSet = new Set(["Ada", "Obi", "Obi", "Nkechi", "Ada"])
-console.log(learnSet)
-learnSet.add("Chi")
-console.log(learnSet)
-console.log(learnSet.has("Chi"))
-learnSet.delete("Chi")
-console.log(learnSet)
-console.log(learnSet.size)
-console.log(learnSet.clear)
+const learnSet = new Set(['Ada', 'Obi', 'Obi', 'Nkechi', 'Ada']);
+console.log(learnSet);
+learnSet.add('Chi');
+console.log(learnSet);
+console.log(learnSet.has('Chi'));
+learnSet.delete('Chi');
+console.log(learnSet);
+console.log(learnSet.size);
+// console.log(learnSet.clear)
+const prompty = prompt('What name do you want to check? ');
+const checkSet = learnSet.has(prompty)
+  ? `${prompty} is present`
+  : learnSet.add(prompty) && `${prompty} was absent but has been added`;
+console.log(checkSet);
+console.log(learnSet);
